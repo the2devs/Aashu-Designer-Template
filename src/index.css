@@ -1,112 +1,24 @@
-:root {
-  --primary-color: #6a1a21; /* Deep Maroon */
-  --primary-light: #8b2b34;
-  --gold: #d4af37;
-  --gold-light: #f3e5ab;
-  --text-dark: #2c2c2c;
-  --text-light: #f8f8f8;
-  --bg-main: #fcfcfc;
-  --bg-alt: #f4efe9;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
-  
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-gray-800 bg-bg-main leading-relaxed overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold text-primary;
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--text-dark);
-  background-color: var(--bg-main);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-}
-
-ul {
-  list-style: none;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Base button styles */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  font-family: var(--font-body);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--gold-light);
-  border: 1px solid var(--primary-color);
-}
-
-.btn-primary:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-}
-
-.btn-outline:hover {
-  background-color: var(--primary-color);
-  color: var(--gold-light);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-  font-style: italic;
-  font-family: var(--font-heading);
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  .box-shadow-gold {
+    box-shadow: 15px 15px 0 #d4af37;
+  }
 }
